@@ -885,7 +885,7 @@ class LabelBasedTransformerRepresentation(Representation):
     .. code-block:: python
 
         from pykeen.datasets import get_dataset
-        from pykeen.nn.representation import EmbeddingSpecification, LabelBasedTransformerRepresentation
+        from pykeen.nn.representation import LabelBasedTransformerRepresentation
         from pykeen.models import ERModel
 
         dataset = get_dataset(dataset="nations")
@@ -895,7 +895,7 @@ class LabelBasedTransformerRepresentation(Representation):
         model = ERModel(
             interaction="ermlp",
             entity_representations=entity_representations,
-            relation_representations=EmbeddingSpecification(shape=entity_representations.shape),
+            relation_representations_kwargs=dict(shape=entity_representations.shape),
         )
     """
 

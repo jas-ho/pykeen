@@ -65,7 +65,7 @@ predictions for entities not seen during training.
 
     from pykeen.pipeline import pipeline
     from pykeen.datasets import get_dataset
-    from pykeen.nn.representation import EmbeddingSpecification, LabelBasedTransformerRepresentation
+    from pykeen.nn.representation import LabelBasedTransformerRepresentation
     from pykeen.models import ERModel
 
     dataset = get_dataset(dataset="nations")
@@ -81,7 +81,7 @@ predictions for entities not seen during training.
                 embedding_dim=entity_representations.embedding_dim,
             ),
             entity_representations=entity_representations,
-            relation_representations=EmbeddingSpecification(
+            relation_representations_kwargs=dict(
                 shape=entity_representations.shape,
             ),
         ),
